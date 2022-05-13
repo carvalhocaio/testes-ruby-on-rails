@@ -1,17 +1,19 @@
 require 'calculator'
 
 describe Calculator do
-  it 'use sum method for two numbers' do
-    calc = Calculator.new
-    result = calc.sum(5, 7)
+  context '#sum' do
+    it 'with positive numbers' do
+      calc = Calculator.new
+      result = calc.sum(5, 7)
 
-    expect(result).to eq(12)
-  end
+      expect(result).to eq(12)
+    end
 
-  it 'use sum method for two negative numbers' do
-    calc = Calculator.new
-    result = calc.sum(-5, -7)
+    it 'with negative numbers' do
+      calc = Calculator.new
+      result = calc.sum(-5, -7)
 
-    expect(result).to eq(-12)
+      expect(result).to eq(-12)
+    end
   end
 end
