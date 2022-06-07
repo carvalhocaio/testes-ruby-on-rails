@@ -10,6 +10,16 @@ describe 'Atributos' do
     puts '>>>>>>>> AFTER EACH test'
   end
 
+  around(:each) do |test|
+    puts 'BEFORE'
+    @pessoa = Pessoa.new
+
+    test.run
+
+    @pessoa.nome = 'Without name!'
+    puts "AFTER >>>>>>  #{@pessoa.inspect}"
+  end
+
   it 'have attributes' do
     @pessoa.nome = 'Claire'
     @pessoa.idade = 21
