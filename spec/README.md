@@ -10,17 +10,22 @@ cache até o teste em questão terminar.
 
 Podemos usar o `let!` Para forçar a invocação do método/helper antes de cada teste.
 
-# RSpec Tag
+# RSpec Tag (.rspec)
 
 **executar apenas a tag collection**  
 --tag type:collection
 
-**ignonar a tag show**  
+```bash
+rspec . -t collection
+```
+
+**ignorar a tag slow**  
 --tag ~slow
 
 # Test Double
 
-Dublê de teste é um termo genérico para qualquer objeto falso, utilizado no lugar de um objeto real, para propósitos de testes.
+Dublê de teste é um termo genérico para qualquer objeto falso, utilizado no lugar de um objeto real, para propósitos de
+testes.
 
 Em outras palavras, um dublê age como um objeto Ruby, que pode ou não aceitar "mensagens" (métodos).
 
