@@ -25,3 +25,7 @@ Dublê de teste é um termo genérico para qualquer objeto falso, utilizado no l
 Em outras palavras, um dublê age como um objeto Ruby, que pode ou não aceitar "mensagens" (métodos).
 
 Dublês são 'rigorosos'/strict, ou seja, precisamos indicar quais mensagens ele aceita.
+
+## Test Stubs
+
+Um stub nada mais é do que forçar uma resposta específica para um determinado método de um objeto colaborador.
