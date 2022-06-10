@@ -15,15 +15,19 @@ describe 'Stub' do
     student = Student.new
 
     allow(student).to receive(:foo) do |arg|
-      if arg == :hello
+      case arg
+      when :hello
         'ola'
-      elsif arg == :hi
+      when :hi
         'hi!'
+      else
+        'welcome'
       end
     end
 
     expect(student.foo(:hello)).to eq('ola')
     expect(student.foo(:hi)).to eq('hi!')
+    expect(student.foo(:heya)).to eq('welcome')
   end
 
   it 'qualquer instancia de classe' do
