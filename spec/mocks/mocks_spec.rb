@@ -5,7 +5,7 @@ describe 'Mock' do
   it '#bar' do
     # setup
     student = Student.new
-    
+
     # verify
     expect(student).to receive(:bar)
 
