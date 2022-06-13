@@ -38,3 +38,14 @@ Um stub nada mais é do que forçar uma resposta específica para um determinado
 ## Test Mock
 
 Mocks são utilizados para a fase de `verify`. Mocks são usados para testar comportamentos.
+
+## Mock com contagem de mensagens
+
+```ruby
+expect(obj).to receive(:message).once
+expect(obj).to receive(:message).twice
+expect(obj).to receive(:message).exactly(3).times
+expect(obj).to receive(:message).at_least(:once)
+expect(obj).to receive(:message).at_least(:twice)
+expect(obj).to receive(:message).at_least(n).times
+```
