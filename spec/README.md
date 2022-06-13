@@ -34,3 +34,7 @@ Dublês são 'rigorosos'/strict, ou seja, precisamos indicar quais mensagens ele
 ## Test Stubs
 
 Um stub nada mais é do que forçar uma resposta específica para um determinado método de um objeto colaborador.
+
+## Test Mock
+
+Mocks são utilizados para a fase de `verify`. Mocks são usados para testar comportamentos.
