@@ -1,8 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Customer, type: :model do
-  it 'Create a Customer' do
-    customer = create(:customer)
+  it '#full_name' do
+    customer = create(:customer, name: 'Leia Organa')
+    expect(customer.full_name).to eq('Mrs. Leia Organa')
+  end
+
+  it '#full_name - faker' do
+    customer = create(:user) # ou create(:customer)
     expect(customer.full_name).to start_with('Mrs.')
   end
 
