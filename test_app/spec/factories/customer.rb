@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :customer, aliases: [:user] do
     transient do
-      upcased false
+      upcased { false }
     end
 
     name { Faker::Name.name }
@@ -10,21 +10,21 @@ FactoryBot.define do
     sequence(:email) { |n| "mail-#{n}@email.com" }
 
     trait :male do
-      gender 'M'
+      gender { 'M' }
     end
 
     trait :female do
-      gender 'F'
+      gender { 'F' }
     end
 
     trait :vip do
-      vip true
-      days_to_pay 30
+      vip { true }
+      days_to_pay { 30 }
     end
 
     trait :default do
-      vip false
-      days_to_pay 15
+      vip { false }
+      days_to_pay { 15 }
     end
 
     factory :customer_vip, traits: [:vip]
