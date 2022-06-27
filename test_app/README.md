@@ -7,3 +7,9 @@
 `before(:create)` -> antes de efetivamente salvar.
 
 `after(:create)` -> depois que é salvo.
+
+## Testes em ordem aleatória
+
+`bin/rspec --order random`
+
+`bin/rspec --seed <number>` -> executar em uma ordem definida
