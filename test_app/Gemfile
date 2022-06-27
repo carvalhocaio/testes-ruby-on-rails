@@ -40,6 +40,7 @@ group :development, :test do
   gem 'faker'
   gem 'httparty'
   gem 'rspec-rails', '~> 3.6'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'vcr'
   gem 'webmock'
 end
