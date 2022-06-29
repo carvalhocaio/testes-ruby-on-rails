@@ -28,6 +28,10 @@ RSpec.describe CustomersController, type: :controller do
       @customer = create(:customer)
     end
 
+    it 'route customer' do
+      should route(:get, '/customers').to(action: :index)
+    end
+
     it 'content-type JSON' do
       customer_params = attributes_for(:customer)
       sign_in @member
@@ -39,7 +43,7 @@ RSpec.describe CustomersController, type: :controller do
       customer_params = attributes_for(:customer)
       sign_in @member
       post :create, params: { customer: customer_params }
-      p response
+      # p response
       expect(flash[:notice]).to match(/successfully created/)
     end
 
@@ -50,6 +54,14 @@ RSpec.describe CustomersController, type: :controller do
       expect do
         post :create, params: { customer: customer_params }
       end.to change(Customer, :count).by(1)
+    end
+
+    it 'with invalid attributes' do
+      customer_params = attributes_for(:customer, address: nil)
+      sign_in @member
+      expect do
+        post :create, params: { customer: customer_params }
+      end.not_to change(Customer, :count)
     end
 
     it 'responds a 200 response' do
