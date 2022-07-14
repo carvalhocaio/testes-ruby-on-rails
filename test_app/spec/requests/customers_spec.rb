@@ -21,11 +21,12 @@ RSpec.describe 'Customers', type: :request do
       expect(response.body).to include_json(id: /\d/, name: (be_kind_of String), email: (be_kind_of String))
     end
 
-    it 'show - JSON status equal 200' do
+    it 'show -  RSpec puro + JSON' do
       get '/customers/1.json'
       response_body = JSON.parse(response.body)
-      expect(response_body.fetch('id').to eq(1))
-      expect(response_body.fetch('name').to be_kind_of(String))
+      expect(response_body.fetch('id')).to eq(1)
+      expect(response_body.fetch('name')).to be_kind_of(String)
+      expect(response_body.fetch('email')).to be_kind_of(String)
     end
 
     it 'create - JSON' do
