@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :customers, only: %i[index new]
+  resources :customers, except: %i[show update destroy]
   root to: 'welcome#index'
 end
