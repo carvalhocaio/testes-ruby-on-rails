@@ -2,7 +2,7 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: %i[edit update show]
 
   def index
-    @customer = Customer.all
+    @customers = Customer.all
   end
 
   def new
