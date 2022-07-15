@@ -1,5 +1,7 @@
 class CustomersController < ApplicationController
-  def index; end
+  def index
+    @customer = Customer.all
+  end
 
   def new
     @customer = Customer.new
