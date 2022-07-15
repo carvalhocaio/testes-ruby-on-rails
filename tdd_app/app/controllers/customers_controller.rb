@@ -15,6 +15,10 @@ class CustomersController < ApplicationController
     end
   end
 
+  def show
+    @customer = Customer.find(params[:id])
+  end
+
   def customer_params
     params.require(:customer).permit(:id, :name, :email, :smoker, :phone, :avatar)
   end
